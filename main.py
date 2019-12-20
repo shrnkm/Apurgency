@@ -1,10 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+act_dict = {'r':['warm'],
+            'g':['yellow'],
+            'b':['cold']}
+
+msr_dict = {0:['bit', 'little'],
+            1:['lot', 'very']}
+
 name = input('What\'s your name?\n')
 print('\nHi ,' + name + '!')
 
-print('=============================================================')
+print('\n\n=============================================================\n\n')
 
 color_dic = {0: ['boring green','#63b365'],
              1: ['cyan','#00ffff'],
@@ -51,16 +58,17 @@ plt.show()
 color = input('Please pick up your color by entering its number: ')
 
 color = color_dic[int(color)][1]
+color_rgb = tuple(int(color.lstrip('#')[i:i+2], 16) for i in (0, 2, 4))
 
-print('=============================================================')
+print('\n\n=============================================================\n\n')
 
 print('Okay, let\'s start with the primary colors (red, gree, blue); which one is closer to your color, ' + name +'?\n')
 
-red = plt.Rectangle((0, 0), 5, 5, fc='#e50000')
+red = plt.Rectangle((0, 0), 5, 5, fc='#ff0000')
 plt.gca().add_patch(red)
-green = plt.Rectangle((5.5, 0), 5, 5, fc='g')
+green = plt.Rectangle((5.5, 0), 5, 5, fc='#00ff00')
 plt.gca().add_patch(green)
-blue = plt.Rectangle((11, 0), 5, 5, fc='b')
+blue = plt.Rectangle((11, 0), 5, 5, fc='#0000ff')
 plt.gca().add_patch(blue)
 the_color = plt.Rectangle((19, 0), 5, 5, fc=color)
 plt.gca().add_patch(the_color)
@@ -71,8 +79,122 @@ plt.axis('off')
 plt.show()
 
 cur_clr = input('Please type the color name, ' + name + ': ')
+if cur_clr.lower == 'red':
+  cur_clr = '#ff0000'
+elif cur_clr.lower == 'blue':
+  cur_clr = '#00ff00'
+elif cur_clr.lower == 'green':
+  cur_clr = '#0000ff'
 
-print('=============================================================')
+cur_clr_rgb = tuple(int(color.lstrip('#')[i:i+2], 16) for i in (0, 2, 4))
+
+print('\n\n=============================================================\n\n')
+
+state = plt.Rectangle((0, 0), 5, 5, fc=cur_clr)
+plt.gca().add_patch(state)
+the_color = plt.Rectangle((5.5, 0), 5, 5, fc=color)
+plt.gca().add_patch(the_color)
+
+plt.annotate('Your color', (8, 2.5), color='w', weight='bold',
+                fontsize=9, ha='center', va='center')
+
+plt.axis('scaled')
+plt.axis('off')
+plt.show()
+
+print('Now, comparing with the left hand side color,')
+statement = input('how do you describe your color? ')
+
+statement = statement.lower()
+cur_clr_rgb_list = list(cur_clr_rgb)
+
+action = ''
+measure = 1
+
+for key,value in act_dict.items():
+  for adj in value:
+    if adj in statement:
+      action = key
+      break
+
+for key,value in msr_dict.items():
+  for adv in value:
+    if adv in statement:
+      measure = key
+      break
+
+if ((action == 'r') and (measure == 0)):
+  cur_clr_rgb_list[0] += 50
+elif ((action == 'r') and (measure == 1)):
+  cur_clr_rgb_list[0] += 100
+elif ((action == 'b') and (measure == 0)):
+  cur_clr_rgb_list[1] += 50
+elif ((action == 'b') and (measure == 1)):
+  cur_clr_rgb_list[1] += 100
+elif ((action == 'g') and (measure == 0)):
+  cur_clr_rgb_list[2] += 50
+elif ((action == 'g') and (measure == 1)):
+  cur_clr_rgb_list[2] += 100
+
+cur_clr_rgb = tuple(cur_clr_rgb_list)
+
+cur_clr = '#%02x%02x%02x' % cur_clr_rgb
+
+
+print('\n\n=============================================================\n\n')
+
+state = plt.Rectangle((0, 0), 5, 5, fc=cur_clr)
+plt.gca().add_patch(state)
+the_color = plt.Rectangle((5.5, 0), 5, 5, fc=color)
+plt.gca().add_patch(the_color)
+
+plt.annotate('Your color', (8, 2.5), color='w', weight='bold',
+                fontsize=9, ha='center', va='center')
+
+plt.axis('scaled')
+plt.axis('off')
+plt.show()
+
+print('Now, comparing with the left hand side color,')
+statement = input('how do you describe your color? ')
+
+statement = statement.lower()
+cur_clr_rgb_list = list(cur_clr_rgb)
+
+action = ''
+measure = 1
+
+for key,value in act_dict.items():
+  for adj in value:
+    if adj in statement:
+      action = key
+      break
+
+for key,value in msr_dict.items():
+  for adv in value:
+    if adv in statement:
+      measure = key
+      break
+
+if ((action == 'r') and (measure == 0)):
+  cur_clr_rgb_list[0] += 50
+elif ((action == 'r') and (measure == 1)):
+  cur_clr_rgb_list[0] += 100
+elif ((action == 'b') and (measure == 0)):
+  cur_clr_rgb_list[1] += 50
+elif ((action == 'b') and (measure == 1)):
+  cur_clr_rgb_list[1] += 100
+elif ((action == 'g') and (measure == 0)):
+  cur_clr_rgb_list[2] += 50
+elif ((action == 'g') and (measure == 1)):
+  cur_clr_rgb_list[2] += 100
+
+cur_clr_rgb = tuple(cur_clr_rgb_list)
+
+cur_clr = '#%02x%02x%02x' % cur_clr_rgb
+
+
+print('\n\n=============================================================\n\n')
 
 state = plt.Rectangle((0, 0), 5, 5, fc=cur_clr)
 plt.gca().add_patch(state)
