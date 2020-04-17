@@ -1,4 +1,4 @@
-# ColorCompanion
+# Color Companion
 Conversational Agents: The project, Osnabrueck University, winter semester 2019-20
 
 
@@ -18,5 +18,3 @@ The learning scenario here is more about a successful communication, between the
 But the most important learning part happens on the machine side. That is the data we could collect from users playing this app. The way they express colors, could be a precious resource for teaching the machine some sort of color common sense. For example, a user might say something like: ‘the target color is more lively.’ Then the app would be like: ‘I don’t get it, what does lively mean’ so demanding the user to express ‘lively’ in more basic terms. But it will add ‘lively’ to its ‘adjective’ pool, with a proper corresponding action/change.
 <br><br>
 MIT App Inventor would be used for the interface. But in case of a need to use NLP libraries, the interface would be ignored for the sake of a fluent user experience.
-
-
