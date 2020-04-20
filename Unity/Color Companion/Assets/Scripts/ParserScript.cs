@@ -11,8 +11,16 @@ public class ParserScript : MonoBehaviour
 
     public void OnSubmit()
     {
+        //stateColor = GetComponent<Image>();
+        
         theInput = userIn.text;
-        Debug.Log("You wrote" + theInput);
+        Debug.Log("You wrote: " + theInput);
+        if (theInput == "red")
+        {
+            //stateColor.color = new Color(255, 0, 0, 2);
+            stateColor.state = new Color(255, 0, 0, 2);
+        }
+
     }
 
     void Start()

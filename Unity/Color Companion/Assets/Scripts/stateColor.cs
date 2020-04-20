@@ -6,20 +6,17 @@ using UnityEngine.UI;
 
 public class stateColor : MonoBehaviour
 {
-    private Image state;
+    public static Color state;
+    public Image stateImage;
 
     void Start()
     {
-        state = GetComponent<Image>();
-        
+        state = new Color(255, 0, 255, 250);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            state.color = new Color(255, 0, 0);
-        }
+        stateImage.color = state;
     }
 }
