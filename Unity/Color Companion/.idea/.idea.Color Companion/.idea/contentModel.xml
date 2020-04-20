@@ -7,7 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="InputScript.cs" t="Include" />
+          <e p="ParserScript.cs" t="Include" />
           <e p="stateColor.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
