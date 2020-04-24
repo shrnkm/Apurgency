@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class targetColor : MonoBehaviour
 {
-    public static Color target = new Color(255, 255, 0, 1);
+    public static Color target = new Color(255, 0, 0, 256);
     public Image targetImage;
 
     void Start()

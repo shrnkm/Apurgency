@@ -11,7 +11,7 @@ public class stateColor : MonoBehaviour
 
     void Start()
     {
-        state = new Color(255, 0, 255, 250);
+        state = new Color(0, 255, 0, 256);
     }
 
     // Update is called once per frame
