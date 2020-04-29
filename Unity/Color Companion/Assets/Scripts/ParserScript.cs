@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ParserScript : MonoBehaviour
 {
     public InputField userIn;
+    public static Color state;
+    public Image stateImage;
     private string theInput;
+    public TextMeshProUGUI Distance;
+    private float distance = 0;
+    
 
     // the adjective dictionary
     private Dictionary<string, Tuple<int, int, int, int>> adjectives =
@@ -27,21 +33,24 @@ public class ParserScript : MonoBehaviour
     
     
     
-    // list of adverbs for milli changes
-    private static List<string> milli = new List<string> {"tiny", "bit", "slight", "little", "tad"};
+    // list of adverbs for minor changes
+    private static List<string> minor = new List<string> {"tiny", "bit", "slight", "little", "tad"};
     // list of adverbs for moderate changes
     private static List<string> moderate = new List<string> {"somehow", "somewhat", "moderately"};
-    // list of adverbs for mega changes
-    private static List<string> mega = new List<string> {"lot", "much", "big deal", "great deal", "very"};
+    // list of adverbs for major changes
+    private static List<string> major = new List<string> {"lot", "much", "big deal", "great deal", "very"};
+    // list of adverbs for negative changes
+    private static List<string> negative = new List<string> {"less"};
     // create the dictionary of adverbs
     public Dictionary<int, List<string>> adverbs = new Dictionary<int, List<string>>
     {
-        {1, milli}, {2, moderate}, {3, mega}
+        {20, minor}, {40, moderate}, {60, major}, {-20, negative}
     };
     
     private void Start()
     {
-
+        state = new Color(0, 255, 0, 256);
+        stateImage.color = state;
     }
 
 
@@ -85,12 +94,34 @@ public class ParserScript : MonoBehaviour
             }
         }
         Debug.Log("adverb value = " + adjVal);
+
+        var change = new Tuple<int, int, int, int>(advVal * adjVal.Item1,
+                                                   advVal * adjVal.Item2,
+                                                   advVal * adjVal.Item3,
+                                                   advVal * adjVal.Item4);
+        
+        Debug.Log("change = " + change);
+
+        state = new Color(state[0]+change.Item1,
+                          state[1]+change.Item2,
+                          state[2]+change.Item3,
+                          state[3]+change.Item4);
+
+        stateImage.color = state;
+        Debug.Log(state);
+
+
     }
     
     void Update()
     {
+        for (int i = 0; i < 4; i++)
+        {
+            distance += Mathf.Pow(targetColor.target[i]- state[i],2);
+        }
 
-
+        distance = Mathf.RoundToInt(distance/4);
+        Distance.text = "Distance: " + distance;
     }
 }
  

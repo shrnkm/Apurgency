@@ -7,9 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="DistanceCalculator.cs" t="Include" />
           <e p="ParserScript.cs" t="Include" />
-          <e p="stateColor.cs" t="Include" />
           <e p="stepCounter.cs" t="Include" />
           <e p="targetColor.cs" t="Include" />
           <e p="TimerScript.cs" t="Include" />

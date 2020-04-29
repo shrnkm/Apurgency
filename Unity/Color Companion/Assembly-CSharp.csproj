@@ -65,9 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DistanceCalculator.cs" />
     <Compile Include="Assets\Scripts\ParserScript.cs" />
-    <Compile Include="Assets\Scripts\stateColor.cs" />
     <Compile Include="Assets\Scripts\StepCounter.cs" />
     <Compile Include="Assets\Scripts\targetColor.cs" />
     <Compile Include="Assets\Scripts\TimerScript.cs" />

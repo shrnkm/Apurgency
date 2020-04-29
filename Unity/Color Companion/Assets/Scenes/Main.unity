@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1152,7 +1152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: C.Com
+  m_Text: CC
 --- !u!222 &460823104
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1910,6 +1910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userIn: {fileID: 1560743806}
+  stateImage: {fileID: 1597885691}
+  Distance: {fileID: 1907041227}
 --- !u!1 &1028245790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2965,6 @@ GameObject:
   - component: {fileID: 1597885690}
   - component: {fileID: 1597885692}
   - component: {fileID: 1597885691}
-  - component: {fileID: 1597885693}
   m_Layer: 5
   m_Name: state
   m_TagString: Untagged
@@ -3028,19 +3029,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597885689}
   m_CullTransparentMesh: 0
---- !u!114 &1597885693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597885689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5d7d5621de1a0458839ce43d6d9941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateImage: {fileID: 1597885691}
 --- !u!1 &1629939561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3679,7 +3667,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Distance: 511'
+  m_text: 'Distance: 32513'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3748,7 +3736,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1907041227}
-    characterCount: 13
+    characterCount: 15
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -3790,7 +3778,6 @@ GameObject:
   - component: {fileID: 2007551377}
   - component: {fileID: 2007551379}
   - component: {fileID: 2007551378}
-  - component: {fileID: 2007551380}
   m_Layer: 5
   m_Name: Distance
   m_TagString: Untagged
@@ -3855,19 +3842,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007551376}
   m_CullTransparentMesh: 0
---- !u!114 &2007551380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007551376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eaf796fd0c582943a994f465c9991c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Distance: {fileID: 1907041227}
 --- !u!1 &2047592433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,7 +4070,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Comparing with the target, how do you describe the state color?
+  m_Text: Comparing to the state color, how do you describe the target color?
 --- !u!222 &2126105261
 CanvasRenderer:
   m_ObjectHideFlags: 0
